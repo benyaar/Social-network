@@ -1,6 +1,5 @@
 import React from "react";
 import "./App.css";
-import Dialogs from "./components/Dialogs/Dialogs";
 import Header from "./components/Header/Header";
 import Navbar from "./components/Navbar/Navbar";
 import Profile from "./components/Profile/Profile";
@@ -8,8 +7,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
+import DialogsContainer from "./components/Dialogs/DialogsContainer";
 
 const App = (props) => {
+debugger
   return (
     <BrowserRouter>
       <div className="app-wrapper">
@@ -20,21 +21,16 @@ const App = (props) => {
             <Route
               path="/Profile"
               element={
-                <Profile
-                  newPostText={props.store.state.profilePage.newPostText}
-                  postData={props.store.state.profilePage.postData}
-                  dispatch={props.dispatch}
+                <Profile   
+                store = {props.store}
                 />
               }
             />
             <Route
               path="/Dialogs/*"
               element={
-                <Dialogs
-                  dialogData={props.store.state.dialogPage.dialogData}
-                  messageData={props.store.state.dialogPage.messageData}
-                  dispatch={props.dispatch}
-                  newMessageText={props.store.state.dialogPage.newMessageText}
+                <DialogsContainer
+                store = {props.store}
                 />
               }
             />

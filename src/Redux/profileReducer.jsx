@@ -10,7 +10,24 @@ export const changePostActionCreater = (text) => {
   };
 };
 
-const profileReducer = (state, action) => {
+let initialState = {
+  
+  postData: [
+    { post: "Hello. I am Artur", likesCount: 50 },
+    { post: "What are you doing?", likesCount: 39 },
+    { post: "What are you doing?", likesCount: 39 },
+    { post: "What are you doing?", likesCount: 39 },
+    { post: "What are you doing?", likesCount: 39 },
+    { post: "What are you doing?", likesCount: 39 },
+  ],
+  newPostText: "it kamas",
+
+}
+
+
+
+
+const profileReducer = (state = initialState , action) => {
   switch (action.type) {
     case "ADDPOST":
       let newPost = {

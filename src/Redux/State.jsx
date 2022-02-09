@@ -34,8 +34,8 @@ let store = {
     },
   },
   dispatch(action) {
-    profileReducer(this.state.profilePage, action);
-    dialogReducer(this.state.dialogPage, action);
+    this.state.profilePage = profileReducer(this.state.profilePage, action);
+    this.state.dialogsPage = dialogReducer(this.state.dialogPage, action);
     this.rerenderEntireTree(this.state);
   },
 
