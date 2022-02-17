@@ -10,7 +10,7 @@ import Settings from "./components/Settings/Settings";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
 
 const App = (props) => {
-debugger
+
   return (
     <BrowserRouter>
       <div className="app-wrapper">
@@ -18,22 +18,8 @@ debugger
         <Navbar />
         <div className="app-wrapper-content">
           <Routes>
-            <Route
-              path="/Profile"
-              element={
-                <Profile   
-                store = {props.store}
-                />
-              }
-            />
-            <Route
-              path="/Dialogs/*"
-              element={
-                <DialogsContainer
-                store = {props.store}
-                />
-              }
-            />
+            <Route path="/Profile" element={<Profile />} />
+            <Route path="/Dialogs/*" element={<DialogsContainer />} />
             <Route path="/News" element={<News />} />
             <Route path="/Music" element={<Music />} />
             <Route path="/Settings" element={<Settings />} />

@@ -6,7 +6,7 @@ export const addMessageActionCreater = () => {
 export const changeMessageActionCreater = (text) => {
   return {
     type: "CHANGEMESSAGE",
-    message: text,
+    newMessage: text,
   };
 };
 
@@ -24,21 +24,28 @@ let initialState = {
     { id: 4, message: "Pop" },
   ],
   newMessageText: "hello",
-}
+};
 
 const dialogReducer = (state = initialState, action) => {
   switch (action.type) {
-    case "ADDMESSAGE":
-      let newMessage = {
-        message: state.newMessageText,
+    case "ADDMESSAGE": {
+      let newMessage = state.newMessageText;
+     
+
+      return {
+        ...state,
+        newMessageText: "",
+        messageData: [...state.messageData, { id: 7, message: newMessage }],
+        
       };
-      state.messageData.push(newMessage);
-      state.newMessageText = "";
-      return state;
-    case "CHANGEMESSAGE":
-      state.newMessageText = action.message;
-      console.log(action.message);
-      return state;
+    }
+    case "CHANGEMESSAGE": {
+    
+      return {
+        ...state,
+        newMessageText: action.newMessage,
+      };
+    }
     default:
       return state;
   }
