@@ -9,3 +9,10 @@
     padding: 20px;
     
   }
+  .blockRight  {
+    float: right;
+    padding: 10px 20px 0px 0px;
+  }
+  .blockRight  a {
+    color: #fff;
+  }
