@@ -8,7 +8,7 @@ const Header = (props) => {
         <img src='https://picsvg.com/example/owl.svg'/>
         <div className={s.blockRight}>
             {props.isAuth ? props.login :  <NavLink to={'/login'}>Login</NavLink>}
-           
+            l
 
 
 

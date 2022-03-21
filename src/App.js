@@ -1,6 +1,5 @@
 import React from "react";
 import "./App.css";
-
 import Navbar from "./components/Navbar/Navbar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import News from "./components/News/News";
@@ -10,6 +9,7 @@ import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import UsersContainer from "./components/Users/UsersContainer";
 import ProfileContainer from "./components/Profile/ProfileContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
+import Login from "./components/Login/Login";
 
 const App = (props) => {
 
@@ -26,6 +26,7 @@ const App = (props) => {
             <Route path="/Music" element={<Music />} />
             <Route path="/Settings" element={<Settings />} />
             <Route path="/Users" element={<UsersContainer />} />
+            <Route path="/login" element={<Login />} />
           </Routes>
         </div>
       </div>

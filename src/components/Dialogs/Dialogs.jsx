@@ -2,6 +2,7 @@ import React from "react";
 import Dialog from "./Dialog/Dialog";
 import s from "./Dialogs.module.css";
 import Message from "./Message/Message";
+import {Navigate} from "react-router-dom";
 
 const Dialogs = (props) => {
   let dialogsElement = props.dialogData.map((d) => (
@@ -17,6 +18,7 @@ const Dialogs = (props) => {
     let message = e.target.value
     props.changeMessage(message)
 }
+
 
   return (
     <div className={s.dialogs}>
